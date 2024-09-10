@@ -1,0 +1,47 @@
+# Python related ignores
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Virtual environment
+venv/
+.env
+
+# AWS credentials (if any)
+.aws/credentials
+.aws/config
+
+# Logs
+*.log
+logs/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE settings (VSCode, PyCharm, etc.)
+.vscode/
+.idea/
+
+# macOS specific ignores
+*.DS_Store
+
+# Windows specific ignores
+*.exe
+*.dll
+*.sys
+
+# Ignore ZIP files or other archives
+*.zip
+*.tar.gz
+*.rar
+*.7z

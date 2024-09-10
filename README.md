@@ -13,8 +13,7 @@ This project demonstrates how to monitor CPU utilization of EC2 instances on **A
 - [Installation](#installation)
 - [Setup](#setup)
 - [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## Architecture
 
@@ -40,5 +39,27 @@ Before you begin, make sure you have the following:
    You can also configure and monitor resources using the AWS Command Line Interface (CLI). Install it by following the official AWS CLI installation guide [here](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html).
 
 3. **Configure AWS CLI** (if using CLI):
-   ```bash
-   aws configure
+
+## Setup
+Step 1: Create a CloudWatch Alarm for CPU Utilization
+Go to the AWS Management Console.
+Navigate to CloudWatch.
+Click on Alarms → Create Alarm.
+Select the EC2 instance(s) you want to monitor.
+Choose CPU Utilization as the metric and set a threshold (e.g., greater than 80%).
+Configure Actions to send notifications via SNS when the alarm is triggered.
+Review and create the alarm.
+Step 2: Set Up Amazon SNS for Notifications
+Go to the SNS dashboard.
+Create a new topic (e.g., CPUAlerts).
+Subscribe to the topic with your email address or phone number.
+Associate the SNS topic with your CloudWatch alarm.
+Step 3: Testing the Setup
+.Trigger the Alarm: Run a CPU-intensive task on your EC2 instance to test the alarm.
+.Receive Notifications: When the CPU utilization exceeds the threshold, CloudWatch will trigger the alarm, and you will receive a notification via SNS.
+
+
+## Usage
+Monitoring: The CPU utilization metrics can be viewed in real-time from the CloudWatch dashboard.
+Alarms: Alarms will trigger notifications when the CPU usage exceeds the configured threshold, allowing you to take immediate action.
+Notifications: SNS will send an email or SMS notification to the specified recipient when alarms are activated.
